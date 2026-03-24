@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -78,15 +79,12 @@ const ForgotPassword: React.FC = () => {
           )}
 
           <div className="mt-6 border-t border-slate-200 pt-6">
-            <a href="/signin" className="flex items-center justify-center gap-1 text-blue-600 hover:underline font-semibold">
+            <Link to="/signin" className="flex items-center justify-center gap-1 text-blue-600 hover:underline font-semibold">
               <span>←</span> Back to Log In
-            </a>
+            </Link>
           </div>
 
           <div className="mt-6 flex items-center justify-center gap-1 text-xs text-slate-500">
-            <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 111.414 1.414L7.414 8l3.293 3.293a1 1 0 11-1.414 1.414l-4-4z" clipRule="evenodd" />
-            </svg>
             Secure, encrypted connection
           </div>
         </div>
