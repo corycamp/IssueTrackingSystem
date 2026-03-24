@@ -1,25 +1,46 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Issue } from './issue.entity';
+import { CreateIssueDto } from './issues.dto';
+import { UpdateIssueDto } from './issues.dto';
 
 @Injectable()
 export class IssuesService {
-  // TODO: Implement issue-related business logic
-  findAll() {
-    return 'This action returns all issues';
+  constructor(
+    @InjectRepository(Issue)
+    private readonly issueRepository: Repository<Issue>,
+  ) {}
+
+  findAll(): Promise<Issue[]> {
+    return this.issueRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns issue #${id}`;
+  async findOne(id: number): Promise<Issue> {
+    const issue = await this.issueRepository.findOneBy({ id });
+    if (!issue) {
+      throw new NotFoundException(`Issue with id ${id} not found`);
+    }
+    return issue;
   }
 
-  create(createIssueDto: any) {
-    return 'This action creates a new issue';
+  create(createIssueDto: CreateIssueDto): Promise<Issue> {
+    const issue = this.issueRepository.create(createIssueDto);
+    return this.issueRepository.save(issue);
   }
 
-  update(id: number, updateIssueDto: any) {
-    return `This action updates issue #${id}`;
+  async update(id: number, updateIssueDto: UpdateIssueDto): Promise<Issue> {
+    const issue = await this.issueRepository.preload({ id, ...updateIssueDto });
+    if (!issue) {
+      throw new NotFoundException(`Issue with id ${id} not found`);
+    }
+    return this.issueRepository.save(issue);
   }
 
-  remove(id: number) {
-    return `This action removes issue #${id}`;
+  async remove(id: number): Promise<void> {
+    const result = await this.issueRepository.delete(id);
+    if (result.affected === 0) {
+      throw new NotFoundException(`Issue with id ${id} not found`);
+    }
   }
 }
