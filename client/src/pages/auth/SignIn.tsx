@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SubmitButton from '../../components/SubmitButton';
+import Logo from '../../components/Logo';
 
 const SignIn: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -19,11 +20,9 @@ const SignIn: React.FC = () => {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="h-14 w-14 rounded-xl bg-blue-600 flex items-center justify-center text-white text-2xl shadow-lg">
-              ✦
-            </div>
+            <Logo height="h-14" width="w-14" />
           </div>
-          <h1 className="text-4xl font-bold text-slate-900">Nexus Core</h1>
+          <h1 className="text-4xl font-bold text-slate-900">Workflow Manager</h1>
           <p className="mt-2 text-slate-500">Precision Engineering for Modern Teams</p>
         </div>
 
