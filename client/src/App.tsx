@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
 import LandingPage from './pages/public/LandingPage';
@@ -29,6 +29,7 @@ function App() {
             <Route path="/issues" element={<Issues />} />
             <Route path="/issue/:id" element={<Issue />} />
           </Route>
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         </PageProvider>
       </Router>

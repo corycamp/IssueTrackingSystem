@@ -7,7 +7,7 @@ import Logo from './Logo';
 const navLinks = [
   { label: 'Projects', to: '/projects' },
   { label: 'Filters', to: '/filters' },
-  { label: 'Dashboards', to: '/dashboards' },
+  { label: 'Dashboard', to: '/dashboard' },
 ];
 
 const NavBar: React.FC = () => {

@@ -157,7 +157,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <main className="min-h-screen bg-slate-50 px-4 py-8 sm:px-6 lg:px-10">
-      <section className="mx-auto max-w-7xl">
+      <section className="mx-auto">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-600">Project Alpha</p>

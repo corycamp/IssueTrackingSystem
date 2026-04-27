@@ -5,8 +5,7 @@ import SideNav from './SideNav';
 import { RootState } from '../app/store';
 
 const PageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
-  const isAuthenticated = true;
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
 
   return (
     <div className="min-h-screen bg-slate-50">

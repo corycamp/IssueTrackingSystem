@@ -15,9 +15,15 @@ const CollaborationBanner: React.FC = () => {
                             <span className="text-xs font-semibold text-rose-500">• LIVE SYNC</span>
                         </div>
                         <div className="space-y-3">
-                            <div className="h-12 rounded-lg bg-slate-100 border-l-4 border-emerald-500"></div>
-                            <div className="h-12 rounded-lg bg-slate-100 border-l-4 border-blue-500"></div>
-                            <div className="h-12 rounded-lg bg-slate-100"></div>
+                            <div className="h-12 rounded-lg bg-slate-100 items-center justify-center flex">
+                                <h1 className="text-lg font-bold text-slate-600">Design</h1>
+                            </div>
+                            <div className="h-12 rounded-lg bg-blue-500 items-center justify-center flex">
+                                <h1 className="text-lg font-bold text-slate-800">Build</h1>
+                            </div>
+                            <div className="h-12 rounded-lg bg-emerald-500 items-center justify-center flex">
+                                <h1 className="text-lg font-bold text-slate-800">Deploy</h1>
+                            </div>
                         </div>
                         <div className="mt-6 flex items-center gap-2">
                             <div className="h-2 w-14 rounded-full bg-slate-200"></div>
