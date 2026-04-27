@@ -10,7 +10,7 @@ const navItems = [
 
 const SideNav: React.FC = () => {
   return (
-    <aside className="hidden xl:flex xl:min-h-[calc(100vh-72px)] xl:w-[280px] flex-col rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
+    <aside className="hidden lg:sticky lg:top-0 lg:flex lg:w-[280px] flex-col rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
       <div className="mb-10 flex items-center gap-4 rounded-3xl bg-slate-50 p-4">
         <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-blue-600 text-sm font-bold text-white">
           PA

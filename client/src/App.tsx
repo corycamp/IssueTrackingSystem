@@ -6,9 +6,12 @@ import LandingPage from './pages/public/LandingPage';
 import SignIn from './pages/auth/SignIn';
 import SignUp from './pages/auth/SignUp';
 import Dashboard from './pages/secured/Dashboard';
+import Backlog from './pages/secured/Backlog';
+import Issues from './pages/secured/Issues';
 import ProtectedRoute from './components/ProtectedRoute';
 import ForgotPassword from './pages/auth/ForgotPassword';
 import PageProvider from './components/PageProvider';
+import Issue from './pages/secured/Issue';
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
           <Route path="/forgot" element={<ForgotPassword />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/backlog" element={<Backlog />} />
+            <Route path="/issues" element={<Issues />} />
+            <Route path="/issue/:id" element={<Issue />} />
           </Route>
         </Routes>
         </PageProvider>
