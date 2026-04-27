@@ -5,7 +5,8 @@ import { RootState } from '../app/store';
 
 const ProtectedRoute = () => {
   const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
-  return !isAuthenticated ? <Navigate to="/" replace /> : <Outlet />;
+  // return !isAuthenticated ? <Navigate to="/" replace /> : <Outlet />;
+  return  <Outlet />;
 };
 
 export default ProtectedRoute;
